@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>图表批注 — solution-docx</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <div class="top-bar-logo"><span>sol</span>docx</div>
+  </div>
+  <div class="top-bar-right">
+    <a href="/outline">大纲编辑</a>
+    <a href="/diagrams" class="active">图表批注</a>
+  </div>
+</div>
+
+<div class="main-layout">
+  <div class="sidebar">
+    <div class="sidebar-header">图表列表</div>
+    <div class="sidebar-list" id="diagramList">
+      <div style="padding:20px;text-align:center;color:var(--text-muted);">加载中...</div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="diagram-toolbar">
+      <div class="diagram-toolbar-center">
+        <button class="btn btn-sm" onclick="window.App.prevDiagram()" id="btnPrev">◀ 上一张</button>
+        <span id="diagramNav" style="font-size:13px;color:var(--text-secondary);">- / -</span>
+        <button class="btn btn-sm" onclick="window.App.nextDiagram()" id="btnNext">下一张 ▶</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="btn btn-sm" onclick="window.App.zoomOut()" title="缩小">−</button>
+        <span id="zoomLevel" style="font-size:12px;color:var(--text-secondary);min-width:40px;text-align:center;">100%</span>
+        <button class="btn btn-sm" onclick="window.App.zoomIn()" title="放大">＋</button>
+        <button class="btn btn-sm" onclick="window.App.zoomReset()" title="重置">⊞</button>
+        <span id="selectionHint" style="font-size:12px;color:var(--text-muted);">点击元素选择 | Ctrl+滚轮缩放</span>
+      </div>
+    </div>
+
+    <div class="content-area" id="diagramArea">
+      <div class="empty-state">
+        <div class="empty-state-icon">📊</div>
+        <div class="empty-state-title">选择一张图表</div>
+        <div class="empty-state-desc">从左侧列表选择图表开始批注</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="panel-header">批注面板</div>
+    <div class="panel-body" id="annotPanel">
+      <div class="empty-state">
+        <div class="empty-state-icon">💬</div>
+        <div class="empty-state-title">尚未选择元素</div>
+        <div class="empty-state-desc">在图表中点击元素开始批注</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="confirm-bar">
+  <button class="btn" id="btnClose" onclick="window.App.closePreview()">关闭预览并提交全部批注</button>
+  <button class="btn btn-primary" id="btnSave" onclick="window.App.confirmAndExit()">确认图表</button>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+<div class="rubber-band" id="rubberBand"></div>
+
+<script src="/static/diagram.js"></script>
+</body>
+</html>

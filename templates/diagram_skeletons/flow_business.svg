@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowYes" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowNo" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dc2626"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="640" fill="#f8fafc"/>
+
+  <text x="480" y="40" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="22" font-weight="bold" fill="#1e293b">业务流程图</text>
+
+  <g id="node-start" filter="url(#shadow)">
+    <rect x="380" y="70" width="200" height="50" rx="25" fill="#2563eb"/>
+    <text x="480" y="100" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="14" font-weight="bold" fill="white">开始</text>
+  </g>
+
+  <line x1="480" y1="120" x2="480" y2="155" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g id="node-step1" filter="url(#shadow)">
+    <rect x="360" y="155" width="240" height="50" rx="6" fill="white" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="480" y="185" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="14" fill="#1e293b">步骤1: 用户提交请求</text>
+  </g>
+
+  <line x1="480" y1="205" x2="480" y2="240" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g id="node-judgment" filter="url(#shadow)">
+    <polygon points="480,240 620,290 480,340 340,290" fill="white" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="480" y="295" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="13" fill="#1e293b">数据校验通过?</text>
+  </g>
+
+  <line x1="480" y1="340" x2="480" y2="390" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowYes)"/>
+  <text x="490" y="368" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="12" fill="#16a34a">是</text>
+
+  <line x1="620" y1="290" x2="720" y2="290" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowNo)"/>
+  <text x="640" y="282" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="12" fill="#dc2626">否</text>
+
+  <g id="node-step2" filter="url(#shadow)">
+    <rect x="360" y="390" width="240" height="50" rx="6" fill="white" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="480" y="420" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="14" fill="#1e293b">步骤2: 调用业务逻辑处理</text>
+  </g>
+
+  <g id="node-step3" filter="url(#shadow)">
+    <rect x="720" y="265" width="200" height="50" rx="6" fill="white" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="820" y="295" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="13" fill="#dc2626">返回错误提示</text>
+  </g>
+
+  <line x1="480" y1="440" x2="480" y2="475" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g id="node-step4" filter="url(#shadow)">
+    <rect x="360" y="475" width="240" height="50" rx="6" fill="white" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="480" y="505" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="14" fill="#1e293b">步骤3: 返回处理结果</text>
+  </g>
+
+  <line x1="480" y1="525" x2="480" y2="555" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g id="node-end" filter="url(#shadow)">
+    <rect x="380" y="555" width="200" height="50" rx="25" fill="#22c55e"/>
+    <text x="480" y="585" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="14" font-weight="bold" fill="white">结束</text>
+  </g>
+
+  <line x1="820" y1="315" x2="820" y2="555" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="820" y1="555" x2="580" y2="555" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="830" y="430" font-family="PingFang SC, Heiti SC, Microsoft YaHei, Hiragino Sans GB, Arial Unicode MS, sans-serif" font-size="11" fill="#64748b" transform="rotate(90,830,430)">异常分支</text>
+</svg>

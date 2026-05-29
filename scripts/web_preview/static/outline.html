@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>大纲编辑 — solution-docx</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <div class="top-bar-logo"><span>sol</span>docx</div>
+  </div>
+  <div class="top-bar-right">
+    <a href="/outline" class="active">大纲编辑</a>
+    <a href="/diagrams">图表批注</a>
+  </div>
+</div>
+
+<div class="main-layout">
+  <div class="sidebar">
+    <div class="sidebar-header">操作面板</div>
+    <div class="toolbar-row" style="flex-direction:column;align-items:stretch;">
+      <button class="btn btn-sm" onclick="window.App.addTopLevel()">+ 添加一级标题</button>
+      <button class="btn btn-sm" onclick="window.App.expandAll()">展开全部</button>
+      <button class="btn btn-sm" onclick="window.App.collapseAll()">折叠全部</button>
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="window.App.importOutline(event)">
+        <button class="btn btn-sm" style="width:100%" onclick="document.getElementById('importFile').click()">导入大纲</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="content-area" id="contentArea">
+      <div class="empty-state">
+        <div class="empty-state-icon">📋</div>
+        <div class="empty-state-title">加载大纲中...</div>
+        <div class="empty-state-desc">正在从服务器读取大纲数据</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="panel-header">节点信息</div>
+    <div class="panel-body" id="nodeInfo">
+      <div class="empty-state">
+        <div class="empty-state-icon">👆</div>
+        <div class="empty-state-title">选择一个章节</div>
+        <div class="empty-state-desc">点击左侧大纲中的章节查看和编辑详细信息</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="confirm-bar">
+  <button class="btn" id="btnClose" onclick="window.App.closePreview()">关闭预览并提交大纲</button>
+  <button class="btn" id="btnReset" onclick="window.App.discard()" disabled>恢复原始</button>
+  <button class="btn btn-primary" id="btnSave" onclick="window.App.saveOutline()">保存大纲</button>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<script src="/static/outline.js"></script>
+</body>
+</html>

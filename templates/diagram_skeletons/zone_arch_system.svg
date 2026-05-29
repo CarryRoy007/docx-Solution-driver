@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680">
+  <defs>
+    <linearGradient id="gAccess" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+    <linearGradient id="gService" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10b981"/></linearGradient>
+    <linearGradient id="gData" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+    <linearGradient id="gInfra" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a5b4fc"/></linearGradient>
+    <filter id="sd"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/></filter>
+    <filter id="sds"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.06"/></filter>
+    <marker id="ab" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#3b82f6"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <style>
+    text { font-family: "PingFang SC","Heiti SC","Microsoft YaHei","Hiragino Sans GB","Arial Unicode MS",sans-serif; }
+  </style>
+  <rect width="960" height="680" fill="#f8fafc"/>
+  <text x="480" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">通用系统分层架构模板</text>
+
+  <!-- Access Layer -->
+  <g id="access-zone">
+    <rect x="30" y="68" width="900" height="108" rx="8" fill="url(#gAccess)" opacity="0.06"/>
+    <rect x="30" y="68" width="900" height="108" rx="8" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="50" y="94" font-size="14" font-weight="bold" fill="#1e40af">接入层</text>
+    <rect x="50" y="108" width="200" height="44" rx="6" fill="white" stroke="#3b82f6" stroke-width="1.5" filter="url(#sds)"/><text x="150" y="135" text-anchor="middle" font-size="13" fill="#1e40af">负载均衡</text>
+    <rect x="270" y="108" width="200" height="44" rx="6" fill="white" stroke="#3b82f6" stroke-width="1.5" filter="url(#sds)"/><text x="370" y="135" text-anchor="middle" font-size="13" fill="#1e40af">API 网关</text>
+    <rect x="490" y="108" width="200" height="44" rx="6" fill="white" stroke="#3b82f6" stroke-width="1.5" filter="url(#sds)"/><text x="590" y="135" text-anchor="middle" font-size="13" fill="#1e40af">认证授权</text>
+    <rect x="710" y="108" width="200" height="44" rx="6" fill="white" stroke="#3b82f6" stroke-width="1.5" filter="url(#sds)"/><text x="810" y="135" text-anchor="middle" font-size="13" fill="#1e40af">限流熔断</text>
+  </g>
+  <line x1="480" y1="176" x2="480" y2="204" stroke="#94a3b8" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- Service Layer -->
+  <g id="service-zone">
+    <rect x="30" y="209" width="900" height="108" rx="8" fill="url(#gService)" opacity="0.06"/>
+    <rect x="30" y="209" width="900" height="108" rx="8" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="50" y="235" font-size="14" font-weight="bold" fill="#065f46">服务层</text>
+    <rect x="50" y="249" width="200" height="44" rx="6" fill="white" stroke="#059669" stroke-width="1.5" filter="url(#sds)"/><text x="150" y="276" text-anchor="middle" font-size="13" fill="#065f46">业务服务 A</text>
+    <rect x="270" y="249" width="200" height="44" rx="6" fill="white" stroke="#059669" stroke-width="1.5" filter="url(#sds)"/><text x="370" y="276" text-anchor="middle" font-size="13" fill="#065f46">业务服务 B</text>
+    <rect x="490" y="249" width="200" height="44" rx="6" fill="white" stroke="#059669" stroke-width="1.5" filter="url(#sds)"/><text x="590" y="276" text-anchor="middle" font-size="13" fill="#065f46">消息队列</text>
+    <rect x="710" y="249" width="200" height="44" rx="6" fill="white" stroke="#059669" stroke-width="1.5" filter="url(#sds)"/><text x="810" y="276" text-anchor="middle" font-size="13" fill="#065f46">定时任务</text>
+  </g>
+  <line x1="480" y1="317" x2="480" y2="345" stroke="#94a3b8" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- Data Layer -->
+  <g id="data-zone">
+    <rect x="30" y="350" width="900" height="108" rx="8" fill="url(#gData)" opacity="0.06"/>
+    <rect x="30" y="350" width="900" height="108" rx="8" fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="50" y="376" font-size="14" font-weight="bold" fill="#92400e">数据层</text>
+    <rect x="50" y="390" width="200" height="44" rx="6" fill="white" stroke="#d97706" stroke-width="1.5" filter="url(#sds)"/><text x="150" y="417" text-anchor="middle" font-size="13" fill="#92400e">关系型数据库</text>
+    <rect x="270" y="390" width="200" height="44" rx="6" fill="white" stroke="#d97706" stroke-width="1.5" filter="url(#sds)"/><text x="370" y="417" text-anchor="middle" font-size="13" fill="#92400e">缓存集群</text>
+    <rect x="490" y="390" width="200" height="44" rx="6" fill="white" stroke="#d97706" stroke-width="1.5" filter="url(#sds)"/><text x="590" y="417" text-anchor="middle" font-size="13" fill="#92400e">搜索引擎</text>
+    <rect x="710" y="390" width="200" height="44" rx="6" fill="white" stroke="#d97706" stroke-width="1.5" filter="url(#sds)"/><text x="810" y="417" text-anchor="middle" font-size="13" fill="#92400e">对象存储</text>
+  </g>
+
+  <!-- Infrastructure Layer -->
+  <g id="infra-zone">
+    <rect x="30" y="490" width="900" height="90" rx="8" fill="url(#gInfra)" opacity="0.05"/>
+    <rect x="30" y="490" width="900" height="90" rx="8" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="50" y="516" font-size="14" font-weight="bold" fill="#4c1d95">基础设施层</text>
+    <rect x="50" y="528" width="180" height="36" rx="5" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#sds)"/><text x="140" y="550" text-anchor="middle" font-size="12" fill="#4c1d95">K8s 容器编排</text>
+    <rect x="250" y="528" width="180" height="36" rx="5" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#sds)"/><text x="340" y="550" text-anchor="middle" font-size="12" fill="#4c1d95">服务网格</text>
+    <rect x="450" y="528" width="180" height="36" rx="5" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#sds)"/><text x="540" y="550" text-anchor="middle" font-size="12" fill="#4c1d95">监控告警</text>
+    <rect x="650" y="528" width="180" height="36" rx="5" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#sds)"/><text x="740" y="550" text-anchor="middle" font-size="12" fill="#4c1d95">日志中心</text>
+  </g>
+
+  <g transform="translate(30, 620)">
+    <rect width="16" height="16" rx="3" fill="url(#gAccess)" opacity="0.4" stroke="#3b82f6" stroke-width="1"/><text x="22" y="13" font-size="11" fill="#64748b">接入层</text>
+    <rect x="95" y="0" width="16" height="16" rx="3" fill="url(#gService)" opacity="0.4" stroke="#059669" stroke-width="1"/><text x="117" y="13" font-size="11" fill="#64748b">服务层</text>
+    <rect x="170" y="0" width="16" height="16" rx="3" fill="url(#gData)" opacity="0.4" stroke="#d97706" stroke-width="1"/><text x="192" y="13" font-size="11" fill="#64748b">数据层</text>
+    <rect x="245" y="0" width="16" height="16" rx="3" fill="url(#gInfra)" opacity="0.4" stroke="#6366f1" stroke-width="1"/><text x="267" y="13" font-size="11" fill="#64748b">基础设施层</text>
+  </g>
+</svg>
